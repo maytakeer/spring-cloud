@@ -18,15 +18,15 @@
   * 整合了Hystrix，具有熔断的能力
   ### 4. Spring-Cloud-f-hystrix(断路器hystrix)
   * 启动：service-ribbon 工程，当我们访问http://localhost:8764/hi?name=forezp 浏览器会显示：hi forezp,i am from port:8762.
-    此时关闭 service-hi 工程，当我们再访问http://localhost:8764/hi?name=forezp 浏览器会显示：hi ,forezp,eorry,error!
+    > 此时关闭 service-hi 工程，当我们再访问http://localhost:8764/hi?name=forezp 浏览器会显示：hi ,forezp,eorry,error!
   * 启动四servcie-feign工程，浏览器打开http://localhost:8765/hi?name=forezp 浏览器会显示：hi forezp,i am from port:8762
-     此时关闭 service-hi 工程，当我们再访问http://localhost:8765/hi?name=forezp 浏览器会显示：sorry forezp
+    > 此时关闭 service-hi 工程，当我们再访问http://localhost:8765/hi?name=forezp 浏览器会显示：sorry forezp
   ### 5. Spring-Cloud-f-zuul（路由网关zuul）
   Zuul的主要功能是路由转发和过滤器。路由功能是微服务的一部分，比如／api/user转发到到user服务，/api/shop转发到到shop服务。zuul默认和Ribbon结合实现了负载均衡的功能。
-  依次运行这五个工程;打开浏览器访问：http://localhost:8769/api-a/hi?name=forezp ;浏览器显示：
-  hi forezp,i am from port:8762
-  打开浏览器访问：http://localhost:8769/api-b/hi?name=forezp ;浏览器显示：
-  hi forezp,i am from port:8762
+  > 依次运行这五个工程;打开浏览器访问：http://localhost:8769/api-a/hi?name=forezp ;浏览器显示：
+  > hi forezp,i am from port:8762
+  > 打开浏览器访问：http://localhost:8769/api-b/hi?name=forezp ;浏览器显示：
+  > hi forezp,i am from port:8762
   #### 服务过滤
   * filterType：返回一个字符串代表过滤器的类型，在zuul中定义了四种不同生命周期的过滤器类型，具体如下：
     + pre：路由之前
