@@ -4,11 +4,11 @@
   ### 1. Spring-Cloud-f-demo（服务的注册和发现eureka） 
   采用Eureka作为服务注册与发现的组件，eureka-server注册服务中心，service-hi服务提供者
   ### 2. Spring-Cloud-f-ribbon（服务消费者rest+ribbon）
-  ribbon是一个负载均衡客户端，可以很好的控制htt和tcp的一些行为。Feign默认集成了ribbon。
+  ribbon是一个负载均衡客户端，可以很好的控制htt和tcp的一些行为。Feign默认集成了ribbon。  
   启动eureka-server 工程；启动service-hi工程，它的端口为8762；将service-hi的配置文件的端口改为8763,并启动，  
   这时你会发现：service-hi在eureka-server注册了2个实例，这就相当于一个小的集群。  
   启动service-ribbon，多次访问http://localhost:8764/hi?name=forezp 浏览器打印的端口为8763、8762交替。  
-  我们通过调用restTemplate.getForObject(“http://SERVICE-HI/hi?name=”+name,String.class)方法时，已经做了负载均衡，访问了不同的端口的服务实例。
+  我们通过调用restTemplate.getForObject(“http://SERVICE-HI/hi?name=”+name,String.class) 方法时，已经做了负载均衡，访问了不同的端口的服务实例。
   * 一个服务注册中心，eureka server,端口为8761
   * service-hi工程跑了两个实例，端口分别为8762,8763，分别向服务注册中心注册
   * sercvice-ribbon端口为8764,向服务注册中心注册
