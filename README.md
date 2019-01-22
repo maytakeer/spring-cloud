@@ -1,8 +1,8 @@
 # spring-cloud
   ## spring cloud 简介
-   spring cloud 为开发人员提供了快速构建分布式系统的一些工具，包括配置管理、服务发现、断路器、路由、微代理、事件总线、全局锁、决策竞选、分布式会话等   等。它运行环境简单，可以在开发人员的电脑上跑。spring cloud是基于springboot的。
+   spring cloud 为开发人员提供了快速构建分布式系统的一些工具，包括配置管理、服务发现、断路器、路由、微代理、事件总线、全局锁、决策竞选、分布式会话等   等。它运行环境简单，可以在开发人员的电脑上跑。spring cloud是基于springboot的。  
     ### Spring-Cloud-f-demo（服务的注册和发现eureka） 
-      采用Eureka作为服务注册与发现的组件，eureka-server注册服务中心，service-hi服务提供者
+     采用Eureka作为服务注册与发现的组件，eureka-server注册服务中心，service-hi服务提供者
     ### Spring-Cloud-f-ribbon（服务消费者rest+ribbon）
       ribbon是一个负载均衡客户端，可以很好的控制htt和tcp的一些行为。Feign默认集成了ribbon。  
       启动eureka-server 工程；启动service-hi工程，它的端口为8762；将service-hi的配置文件的端口改为8763,并启动，  
