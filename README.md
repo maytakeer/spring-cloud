@@ -7,4 +7,4 @@
   ribbon是一个负载均衡客户端，可以很好的控制htt和tcp的一些行为。Feign默认集成了ribbon。
   启动eureka-server 工程；启动service-hi工程，它的端口为8762；将service-hi的配置文件的端口改为8763,并启动，这时你会发现：service-hi在eureka-server注册了2个实例，这就相当于一个小的集群。启动service-ribbon，多次访问http://localhost:8764/hi?name=forezp，浏览器打印的端口为8763、8762交替。我们通过调用restTemplate.getForObject(“http://SERVICE-HI/hi?name=”+name,String.class)方法时，已经做了负载均衡，访问了不同的端口的服务实例。
   此时的架构
-  ![https://img-blog.csdnimg.cn/20181229160939874]
+  !(https://img-blog.csdnimg.cn/20181229160939874)
